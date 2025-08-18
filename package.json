@@ -1,0 +1,47 @@
+{
+  "name": "gcpal",
+  "displayName": "GCpal",
+  "description": "A free AI coding assistant for VS Code using OpenRouter or Together AI models.",
+  "version": "0.0.1",
+  "publisher": "developer-mohanaditya",
+  "engines": {
+    "vscode": "^1.80.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "*"
+  ],
+  "main": "./out/extension.js",
+  "scripts": {
+    "compile": "tsc -p ./"
+  },
+  "contributes": {
+    "configuration": {
+      "title": "GCpal",
+      "properties": {
+        "gcpal.apiKey": {
+          "type": "string",
+          "default": "",
+          "description": "API key for OpenRouter.ai or Together AI"
+        },
+        "gcpal.provider": {
+          "type": "string",
+          "enum": ["openrouter", "together"],
+          "default": "openrouter",
+          "description": "LLM provider to use"
+        },
+        "gcpal.model": {
+          "type": "string",
+          "default": "deepseek-v3-base:free",
+          "description": "Model name to use"
+        }
+      }
+    }
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.84.0",
+    "typescript": "^5.3.3"
+  }
+}
